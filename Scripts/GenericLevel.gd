@@ -17,8 +17,10 @@ func _ready():
 
 func _process(delta):
 	if PlayerCamera != null:
-		#CameraArea.global_position = PlayerCamera.get_camera_screen_center()
+		# Player-centered follow
 		CameraArea.global_position = Player.global_position
+		# Offscreen-based movement
+		#CameraArea.global_position = PlayerCamera.get_camera_screen_center()
 	
 	handleStateLogic()
 
