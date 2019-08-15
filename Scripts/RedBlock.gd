@@ -1,11 +1,17 @@
 extends StaticBody2D
 
+export (bool) var isActive = true
+
 onready var isActivated = true
 
 onready var Sprite = $Sprite
 
 func _ready():
 	Sprite.frame = 0
+	isActivated = isActive
+	# Hacky way of making the object update correctly
+	offscreenToggle()
+	offscreenToggle()
 
 func offscreenToggle():
 	isActivated = not isActivated
