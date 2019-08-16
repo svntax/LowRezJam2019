@@ -77,7 +77,7 @@ editor/display_folded = true
 position = Vector2( 16, 32 )
 
 [node name="LevelExit" parent="." instance=ExtResource( 4 )]
-position = Vector2( 53, 32 )
+position = Vector2( 54, 32 )
 
 [node name="RedBlocks" type="YSort" parent="."]
 
