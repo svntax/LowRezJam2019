@@ -43,7 +43,7 @@ func moveToLevel(level):
 		2:
 			newLevel = level02.instance()
 		_:
-			pass #TODO screen after finishing all levels
+			get_tree().change_scene("res://Scenes/EndScreen.tscn")
 	if newLevel != null:
 		$LevelRoot.add_child(newLevel)
 	numberOfMoves = 0
