@@ -43,6 +43,9 @@ script = ExtResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 hframes = 4
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -66,3 +69,6 @@ anims/move = SubResource( 2 )
 [node name="PlayerRect" type="Node2D" parent="."]
 z_index = 11
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}

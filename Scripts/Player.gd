@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
-onready var Gameplay = get_parent()
+onready var CurrentLevel = get_parent()
+onready var Gameplay = CurrentLevel.get_parent().get_parent()
 onready var AnimationPlayer = $AnimationPlayer
 onready var Sprite = $Sprite
 
@@ -27,7 +28,7 @@ func updateDirection():
 func _physics_process(delta):
 	dx = 0
 	dy = 0
-	if Gameplay.gameState == Gameplay.State.PLAYING:
+	if CurrentLevel.gameState == CurrentLevel.State.PLAYING:
 		if Input.is_action_just_pressed("move_left"):
 			dx -= 1
 		if Input.is_action_just_pressed("move_right"):
@@ -39,6 +40,8 @@ func _physics_process(delta):
 		updateDirection()
 		if !test_move(transform, Vector2(dx * SPEED, dy * SPEED)):
 			#move_and_collide(Vector2(dx * SPEED, dy * SPEED))
+			if dx != 0 or dy != 0:
+				Gameplay.incrementMoves()
 			move_short()
 			if (dx != 0 or dy != 0) and not AnimationPlayer.is_playing():
 				AnimationPlayer.play("move")

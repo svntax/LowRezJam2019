@@ -3,6 +3,7 @@ extends Node2D
 enum State {PLAYING, LEVEL_FINISHED}
 onready var gameState = State.PLAYING
 
+onready var Gameplay = get_tree().get_root().get_node("Gameplay")
 onready var CameraArea = $CameraArea
 onready var Player = $Player
 onready var PlayerCamera = $Player/Camera2D
@@ -31,7 +32,7 @@ func setState(newState):
 		State.PLAYING:
 			LevelFinishedUI.hide()
 		State.LEVEL_FINISHED:
-			LevelFinishedUI.show()
+			LevelFinishedUI.showUI()
 			get_parent().get_parent().get_node("LevelFinished").play()
 
 func handleStateLogic():
@@ -40,7 +41,13 @@ func handleStateLogic():
 			pass
 		State.LEVEL_FINISHED:
 			if Input.is_action_just_pressed("main_action"):
-				Globals.nextLevel()
+				var menuIndex = LevelFinishedUI.getMenuIndex()
+				if menuIndex == 0:
+					Gameplay.selectSound.play()
+					Gameplay.restartLevel()
+				elif menuIndex == 1:
+					Gameplay.selectSound.play()
+					Globals.nextLevel()
 
 func handleOffscreenObject(obj):
 	if obj.has_method("offscreenToggle"):

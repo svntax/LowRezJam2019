@@ -1,0 +1,126 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/GenericLevel.gd" type="Script" id=1]
+[ext_resource path="res://level_tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/LevelExit.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/SmallRedBlock.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 14, 14 )
+
+[node name="Level02" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 4, 4 )
+cell_quadrant_size = 4
+format = 1
+tile_data = PoolIntArray( 0, -1073741824, 0, 1, -1073741824, 0, 2, -1073741824, 0, 3, -1073741824, 0, 4, -1073741824, 0, 5, -1073741824, 0, 6, -1073741824, 0, 7, -1073741824, 0, 8, -1073741824, 0, 9, -1073741824, 0, 10, -1073741824, 0, 11, -1073741824, 0, 12, -1073741824, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 65536, -1073741824, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 131072, -1073741824, 0, 131073, 0, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 131082, 1, 0, 131083, 1, 0, 131084, 0, 0, 131085, 0, 0, 131086, 0, 0, 131087, 0, 0, 196608, -1073741824, 0, 196609, 0, 0, 196610, 2, 0, 196611, 2, 0, 196612, 2, 0, 196613, 2, 0, 196614, 2, 0, 196615, 2, 0, 196616, 2, 0, 196617, 2, 0, 196618, 2, 0, 196619, 2, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 2, 0, 262147, 2, 0, 262148, 2, 0, 262149, 2, 0, 262150, 2, 0, 262151, 2, 0, 262152, 2, 0, 262153, 2, 0, 262154, 2, 0, 262155, 2, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 2, 0, 327683, 2, 0, 327684, 2, 0, 327685, 2, 0, 327686, 2, 0, 327687, 2, 0, 327688, 2, 0, 327689, 2, 0, 327690, 2, 0, 327691, 2, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 393216, 0, 0, 393217, 1, 0, 393218, 2, 0, 393219, 2, 0, 393220, 2, 0, 393221, 2, 0, 393222, 2, 0, 393223, 2, 0, 393224, 2, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 458752, 0, 0, 458753, 2, 0, 458754, 2, 0, 458755, 2, 0, 458756, 2, 0, 458757, 2, 0, 458758, 2, 0, 458759, 2, 0, 458760, 2, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 524288, 0, 0, 524289, 2, 0, 524290, 2, 0, 524291, 2, 0, 524292, 2, 0, 524293, 2, 0, 524294, 2, 0, 524295, 2, 0, 524296, 2, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 589824, 0, 0, 589825, 2, 0, 589826, 2, 0, 589827, 2, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 655360, 0, 0, 655361, 2, 0, 655362, 2, 0, 655363, 2, 0, 655364, 1, 0, 655365, 1, 0, 655366, 1, 0, 655367, 1, 0, 655368, 1, 0, 655369, 1, 0, 655370, 1, 0, 655371, 1, 0, 655372, 1, 0, 655373, 1, 0, 655374, 1, 0, 655375, 0, 0, 720896, 0, 0, 720897, 2, 0, 720898, 2, 0, 720899, 2, 0, 720900, 2, 0, 720901, 2, 0, 720902, 2, 0, 720903, 2, 0, 720904, 2, 0, 720905, 2, 0, 720906, 2, 0, 720907, 2, 0, 720908, 2, 0, 720909, 2, 0, 720910, 2, 0, 720911, 0, 0, 786432, 0, 0, 786433, 2, 0, 786434, 2, 0, 786435, 2, 0, 786436, 2, 0, 786437, 2, 0, 786438, 2, 0, 786439, 2, 0, 786440, 2, 0, 786441, 2, 0, 786442, 2, 0, 786443, 2, 0, 786444, 2, 0, 786445, 2, 0, 786446, 2, 0, 786447, 0, 0, 851968, 0, 0, 851969, 2, 0, 851970, 2, 0, 851971, 2, 0, 851972, 2, 0, 851973, 2, 0, 851974, 2, 0, 851975, 2, 0, 851976, 2, 0, 851977, 2, 0, 851978, 2, 0, 851979, 2, 0, 851980, 2, 0, 851981, 2, 0, 851982, 2, 0, 851983, 0, 0, 917504, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 917514, 0, 0, 917515, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 983040, 0, 0, 983041, 0, 0, 983042, 0, 0, 983043, 0, 0, 983044, 0, 0, 983045, 0, 0, 983046, 0, 0, 983047, 0, 0, 983048, 0, 0, 983049, 0, 0, 983050, 0, 0, 983051, 0, 0, 983052, 0, 0, 983053, 0, 0, 983054, 0, 0, 983055, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 52, 48 )
+
+[node name="Camera2D" parent="Player" index="2"]
+limit_bottom = 64
+
+[node name="LevelExit" parent="." instance=ExtResource( 4 )]
+position = Vector2( 42, 16 )
+
+[node name="RedBlocks" type="YSort" parent="."]
+
+[node name="RedBlock" parent="RedBlocks" instance=ExtResource( 5 )]
+position = Vector2( 34, 46 )
+
+[node name="RedBlock3" parent="RedBlocks" instance=ExtResource( 5 )]
+position = Vector2( 34, 54 )
+
+[node name="RedBlock4" parent="RedBlocks" instance=ExtResource( 5 )]
+position = Vector2( 26, 54 )
+
+[node name="RedBlock6" parent="RedBlocks" instance=ExtResource( 5 )]
+position = Vector2( 26, 46 )
+
+[node name="RedBlock7" parent="RedBlocks" instance=ExtResource( 5 )]
+position = Vector2( 30, 50 )
+
+[node name="RedBlock8" parent="RedBlocks" instance=ExtResource( 5 )]
+position = Vector2( 22, 50 )
+
+[node name="RedBlock9" parent="RedBlocks" instance=ExtResource( 5 )]
+position = Vector2( 18, 46 )
+
+[node name="RedBlock11" parent="RedBlocks" instance=ExtResource( 5 )]
+position = Vector2( 18, 34 )
+
+[node name="RedBlock12" parent="RedBlocks" instance=ExtResource( 5 )]
+position = Vector2( 22, 30 )
+isActive = false
+
+[node name="RedBlock13" parent="RedBlocks" instance=ExtResource( 5 )]
+position = Vector2( 26, 26 )
+
+[node name="RedBlock14" parent="RedBlocks" instance=ExtResource( 5 )]
+position = Vector2( 22, 22 )
+
+[node name="RedBlock24" parent="RedBlocks" instance=ExtResource( 5 )]
+position = Vector2( 22, 14 )
+isActive = false
+
+[node name="RedBlock25" parent="RedBlocks" instance=ExtResource( 5 )]
+position = Vector2( 30, 14 )
+
+[node name="RedBlock15" parent="RedBlocks" instance=ExtResource( 5 )]
+position = Vector2( 18, 18 )
+
+[node name="RedBlock16" parent="RedBlocks" instance=ExtResource( 5 )]
+position = Vector2( 18, 26 )
+isActive = false
+
+[node name="RedBlock17" parent="RedBlocks" instance=ExtResource( 5 )]
+position = Vector2( 26, 18 )
+isActive = false
+
+[node name="RedBlock18" parent="RedBlocks" instance=ExtResource( 5 )]
+position = Vector2( 30, 22 )
+isActive = false
+
+[node name="RedBlock19" parent="RedBlocks" instance=ExtResource( 5 )]
+position = Vector2( 30, 30 )
+
+[node name="RedBlock20" parent="RedBlocks" instance=ExtResource( 5 )]
+position = Vector2( 26, 34 )
+isActive = false
+
+[node name="RedBlock21" parent="RedBlocks" instance=ExtResource( 5 )]
+position = Vector2( 34, 34 )
+
+[node name="RedBlock22" parent="RedBlocks" instance=ExtResource( 5 )]
+position = Vector2( 34, 26 )
+isActive = false
+
+[node name="RedBlock23" parent="RedBlocks" instance=ExtResource( 5 )]
+position = Vector2( 34, 18 )
+
+[node name="RedBlock10" parent="RedBlocks" instance=ExtResource( 5 )]
+position = Vector2( 18, 54 )
+
+[node name="CameraArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraArea"]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+[connection signal="area_exited" from="CameraArea" to="." method="_on_CameraArea_area_exited"]
+[connection signal="body_exited" from="CameraArea" to="." method="_on_CameraArea_body_exited"]
+
+[editable path="Player"]
+
+[editable path="RedBlocks/RedBlock"]
