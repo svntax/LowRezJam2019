@@ -13,13 +13,6 @@ onready var direction = 1 #1 = right, -1 = left
 func _ready():
 	AnimationPlayer.playback_speed = 2
 
-func _process(delta):
-	update()
-
-func _draw():
-	draw_rect(Rect2(-16, -16, 32, 32), Color("#6abe30"), false)
-	draw_line(Vector2(-16, 16), Vector2(-16, 17), Color("#6abe30"))
-
 func move_short():
 	move_and_collide(Vector2(dx * SPEED, dy * SPEED))
 
@@ -35,15 +28,6 @@ func _physics_process(delta):
 	dx = 0
 	dy = 0
 	if Gameplay.gameState == Gameplay.State.PLAYING:
-#		if Input.is_action_pressed("move_left"):
-#			dx -= 1
-#		if Input.is_action_pressed("move_right"):
-#			dx += 1
-#		if Input.is_action_pressed("move_up"):
-#			dy -= 1
-#		if Input.is_action_pressed("move_down"):
-#			dy += 1
-		#move_and_slide(Vector2(dx * SPEED, dy * SPEED)
 		if Input.is_action_just_pressed("move_left"):
 			dx -= 1
 		if Input.is_action_just_pressed("move_right"):
