@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/switch_00.wav-252bc856dbd9b1f45988ff33a29c2a72.sample"
+path="res://.import/level_finish.wav-398a1a9f00e962f9f2d0a0483a402485.sample"
 
 [deps]
 
-source_file="res://Sounds/switch_00.wav"
-dest_files=[ "res://.import/switch_00.wav-252bc856dbd9b1f45988ff33a29c2a72.sample" ]
+source_file="res://Audio/level_finish.wav"
+dest_files=[ "res://.import/level_finish.wav-398a1a9f00e962f9f2d0a0483a402485.sample" ]
 
 [params]
 

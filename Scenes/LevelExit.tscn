@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/LevelExit.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/exit_gate.png" type="Texture" id=2]
+[ext_resource path="res://Audio/switch_exit.wav" type="AudioStream" id=3]
+[ext_resource path="res://Audio/switch_exit_off.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3, 3 )
@@ -39,4 +41,10 @@ shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/active = SubResource( 2 )
+
+[node name="SwitchOn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="SwitchOff" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
 [connection signal="body_entered" from="." to="." method="_on_LevelExit_body_entered"]

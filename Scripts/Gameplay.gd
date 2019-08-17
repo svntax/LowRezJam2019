@@ -7,6 +7,7 @@ enum State {GAMEPLAY, PAUSED}
 onready var state = State.GAMEPLAY
 
 onready var PauseMenu = $UI/PauseMenu
+onready var LevelFinished = $LevelFinished
 
 func _ready():
 	pass

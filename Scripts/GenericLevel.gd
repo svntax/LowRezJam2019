@@ -32,6 +32,7 @@ func setState(newState):
 			LevelFinishedUI.hide()
 		State.LEVEL_FINISHED:
 			LevelFinishedUI.show()
+			get_parent().get_parent().get_node("LevelFinished").play()
 
 func handleStateLogic():
 	match gameState:

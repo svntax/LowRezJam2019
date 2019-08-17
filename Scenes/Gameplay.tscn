@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Gameplay.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/main_tileset.png" type="Texture" id=2]
 [ext_resource path="res://Levels/Level00.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/LevelFinishedUI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Audio/level_finish.wav" type="AudioStream" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
@@ -133,3 +134,6 @@ visible = false
 
 [node name="PauseMenu" parent="UI" instance=ExtResource( 5 )]
 visible = false
+
+[node name="LevelFinished" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
