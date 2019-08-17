@@ -5,15 +5,20 @@ export (bool) var isActive = true
 onready var isActivated = true
 
 onready var Sprite = $Sprite
+onready var SwitchSound = $SwitchSound
+onready var AnimationPlayer = $AnimationPlayer
 
 func _ready():
 	Sprite.frame = 0
 	isActivated = isActive
 	# Hacky way of making the object update correctly
-	offscreenToggle()
-	offscreenToggle()
+	offscreenToggle(false)
+	offscreenToggle(false)
 
-func offscreenToggle():
+func offscreenToggle(playEffects = true):
+	if playEffects:
+		SwitchSound.play()
+		AnimationPlayer.play("switch")
 	isActivated = not isActivated
 	if isActivated:
 		Sprite.frame = 0

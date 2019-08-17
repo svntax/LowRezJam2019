@@ -105,10 +105,10 @@ position = Vector2( 38, 50 )
 
 [node name="RedBlock10" parent="RedBlocks" instance=ExtResource( 5 )]
 position = Vector2( 34, 22 )
+isActive = false
 
 [node name="RedBlock16" parent="RedBlocks" instance=ExtResource( 5 )]
 position = Vector2( 30, 22 )
-isActive = false
 
 [node name="RedBlock6" parent="RedBlocks" instance=ExtResource( 5 )]
 position = Vector2( 26, 50 )
@@ -118,10 +118,10 @@ position = Vector2( 38, 46 )
 
 [node name="RedBlock11" parent="RedBlocks" instance=ExtResource( 5 )]
 position = Vector2( 34, 18 )
-isActive = false
 
 [node name="RedBlock13" parent="RedBlocks" instance=ExtResource( 5 )]
 position = Vector2( 30, 18 )
+isActive = false
 
 [node name="RedBlock7" parent="RedBlocks" instance=ExtResource( 5 )]
 position = Vector2( 26, 46 )
