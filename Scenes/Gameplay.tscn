@@ -3,9 +3,9 @@
 [ext_resource path="res://Scripts/Gameplay.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/main_tileset.png" type="Texture" id=2]
 [ext_resource path="res://Levels/Level00.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/LevelFinishedUI.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=5]
-[ext_resource path="res://MainFont.tres" type="DynamicFont" id=6]
+[ext_resource path="res://MainFont.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Scenes/LevelFinishedUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Audio/level_finish.wav" type="AudioStream" id=7]
 [ext_resource path="res://Audio/select_00.wav" type="AudioStream" id=8]
 [ext_resource path="res://Audio/select_01.wav" type="AudioStream" id=9]
@@ -132,10 +132,22 @@ __meta__ = {
 pause_mode = 2
 layer = 15
 
-[node name="LevelFinishedUI" parent="UI" instance=ExtResource( 4 )]
+[node name="HeaderContainer" type="CenterContainer" parent="UI"]
+margin_top = 2.0
+margin_right = 64.0
+margin_bottom = 8.0
+
+[node name="Label" type="Label" parent="UI/HeaderContainer"]
+margin_left = 18.0
+margin_right = 46.0
+margin_bottom = 5.0
+custom_fonts/font = ExtResource( 4 )
+text = "Level 1"
+
+[node name="LevelFinishedUI" parent="UI" instance=ExtResource( 5 )]
 visible = false
 
-[node name="PauseMenu" parent="UI" instance=ExtResource( 5 )]
+[node name="PauseMenu" parent="UI" instance=ExtResource( 6 )]
 visible = false
 
 [node name="MovesContainer" type="CenterContainer" parent="UI"]
@@ -147,7 +159,7 @@ margin_bottom = 62.0
 margin_left = 16.0
 margin_right = 48.0
 margin_bottom = 5.0
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 4 )
 text = "Moves: 0"
 
 [node name="LevelFinished" type="AudioStreamPlayer" parent="."]

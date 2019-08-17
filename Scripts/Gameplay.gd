@@ -24,6 +24,9 @@ func _process(delta):
 func updateMovesLabel():
 	$UI/MovesContainer/MovesLabel.set_text("Moves: " + str(numberOfMoves))
 
+func updateLevelsHeader():
+	$UI/HeaderContainer/Label.set_text("Level " + str(Globals.currentLevel + 1))
+
 func incrementMoves():
 	numberOfMoves += 1
 	updateMovesLabel()
@@ -48,6 +51,7 @@ func moveToLevel(level):
 		$LevelRoot.add_child(newLevel)
 	numberOfMoves = 0
 	updateMovesLabel()
+	updateLevelsHeader()
 
 func setState(newState):
 	state = newState
