@@ -8,6 +8,7 @@ onready var selectSound = $UISelect
 func _ready():
 	OS.set_window_size(Vector2(512, 512))
 	OS.set_window_position((OS.get_screen_size() / 2.0) - (OS.get_window_size() / 2.0))
+	$LevelExit.offscreenToggle()
 
 func updateSelectionRectangle():
 	if menuIndex == 0:

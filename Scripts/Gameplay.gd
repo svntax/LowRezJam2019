@@ -15,7 +15,7 @@ onready var selectSound = $UISelect
 onready var numberOfMoves = 0
 
 func _ready():
-	pass
+	Globals.currentLevel = 0
 
 func _process(delta):
 	if Input.is_action_just_pressed("restart"):
