@@ -11,9 +11,11 @@ func _ready():
 
 func updateSelectionRectangle():
 	if menuIndex == 0:
-		selectionRect.rect_global_position = Vector2(19, 45)
+		selectionRect.rect_global_position = Vector2(14, 35)
 	elif menuIndex == 1:
-		selectionRect.rect_global_position = Vector2(19, 53)
+		selectionRect.rect_global_position = Vector2(14, 44)
+	elif menuIndex == 2:
+		selectionRect.rect_global_position = Vector2(14, 53)
 
 func _process(delta):
 	if Input.is_action_just_pressed("main_action"):
@@ -21,6 +23,8 @@ func _process(delta):
 		if menuIndex == 0:
 			get_tree().change_scene("res://Scenes/Gameplay.tscn")
 		elif menuIndex == 1:
+			get_tree().change_scene("res://Scenes/ControlsScreen.tscn")
+		elif menuIndex == 2:
 			get_tree().quit()
 	
 	if Input.is_action_just_pressed("move_down"):
@@ -29,7 +33,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("move_up"):
 		menuIndex -= 1
 		moveSound.play()
-	menuIndex %= 2
+	menuIndex %= 3
 	if menuIndex < 0:
-		menuIndex = 1
+		menuIndex = 2
 	updateSelectionRectangle()
